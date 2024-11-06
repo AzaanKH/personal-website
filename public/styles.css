@@ -1,183 +1,228 @@
+:root {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #333333;
+  --card-bg: #ffffff;
+  --nav-bg: #f8f9fa;
+  --header-bg: #f8f9fa;
+  --border-color: rgba(0,0,0,0.125);
+  --section-bg: #ffffff;
+  --heading-color: #333333;
+  --nav-text: #333333;
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #ffffff;
+  --card-bg: #1f1f1f;
+  --nav-bg: #1f1f1f;
+  --header-bg: #1f1f1f;
+  --border-color: rgba(255,255,255,0.125);
+  --section-bg: #121212;
+  --heading-color: #ffffff;
+  --nav-text: #ffffff;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1.1rem;
   line-height: 1.6;
-  color: #333;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
 }
 
-header {
-  background-color: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+.navbar {
+  background-color: var(--nav-bg) !important;
+  transition: background-color 0.3s ease;
+  padding: 1rem 0;
+}
+
+.navbar .nav-link {
+  color: var(--nav-text) !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.header-section {
+  background-color: var(--header-bg);
+  padding: 6rem 0;
   margin-bottom: 2rem;
-  position: relative;
 }
 
-nav {
-  background-color: #34495e;
-  padding: 0.5rem;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-nav ul li {
-  margin: 5px 10px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.section {
-  background-color: #f4f4f4;
-  margin-bottom: 2rem;
-  padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.section-title {
-  color: #2c3e50;
-  margin-bottom: 20px;
-  font-size: 2em;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 10px;
-}
-
-.projects ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.projects li {
+.header-section h1 {
+  color: var(--heading-color);
+  font-size: 3.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
-.resume-link {
+.header-section p {
+  font-size: 1.4rem;
+  color: var(--bs-body-color);
+}
+
+.section-title {
+  color: var(--heading-color);
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #007bff;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.card-title {
+  color: #007bff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  color: var(--bs-body-color);
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+/* Theme Switch Styles */
+.theme-switch {
+  position: relative;
   display: inline-block;
-  background-color: #3498db;
+  width: 60px;
+  height: 30px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* Social Links Styles */
+.social-links a {
+  color: var(--bs-body-color);
+  margin: 0 15px;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff;
+  transform: translateY(-2px);
+}
+
+/* Resume Button Styles */
+.resume-btn {
+  background-color: #007bff;
   color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: none;
 }
 
-.resume-link:hover {
-  background-color: #2980b9;
-}
-
-footer {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #2c3e50;
+.resume-btn:hover {
+  background-color: #0056b3;
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,123,255,0.3);
 }
 
-footer a {
-  color: #3498db;
+/* About Section */
+#bio p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
 }
 
-body.dark-mode {
-  background-color: #121212;
-  color: #cfcfcf;
+/* Ensure dark mode text visibility */
+[data-bs-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1);
 }
 
-header.dark-mode {
-  background-color: #1f1f1f;
-  color: #cfcfcf;
+/* Section spacing */
+.section {
+  padding: 5rem 0;
 }
 
-nav.dark-mode {
-  background-color: #1f1f1f;
-}
-
-body.dark-mode .toggle-label {
-  color: #cfcfcf;
-}
-
-body.dark-mode .section {
-  background-color: #1f1f1f;
-  color: #e0e0e0;
-}
-
-body.dark-mode .projects li,
-body.dark-mode .resume-link {
-  background-color: #2a2a2a;
-  color: #ffffff;
-}
-
-body.dark-mode .resume-link:hover {
-  background-color: #3b3b3b;
-}
-
-body.dark-mode .projects li {
-  border-left: 5px solid #3498db;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-body.dark-mode .section-title {
-  color: #e0e0e0;
-  border-bottom: 2px solid #3498db;
-}
-
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  body {
-    padding: 10px;
-    max-width: 100%;
+  .header-section h1 {
+    font-size: 2.5rem;
   }
-
-  header {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+  
+  .header-section p {
+    font-size: 1.2rem;
   }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 5px 0;
-  }
-
-  .section {
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-
+  
   .section-title {
-    font-size: 1.5em;
+    font-size: 2rem;
   }
-
-  .projects li {
-    font-size: 0.9em;
+  
+  #bio p {
+    font-size: 1.1rem;
   }
-
-  .resume-link {
-    padding: 5px 10px;
-    font-size: 0.9em;
+  
+  .card-title {
+    font-size: 1.3rem;
   }
-
-  footer {
-    padding: 0.5rem;
-    margin-top: 1rem;
+  
+  .social-links a {
+    font-size: 1.5rem;
+    margin: 0 10px;
   }
 }

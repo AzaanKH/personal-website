@@ -3,66 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azaan Khalfe - Personal Website</title>
+    <title>Azaan Khalfe - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Azaan Khalfe</h1>
-        <div class="toggle-container">
-          <label for="dark-mode-toggle" class="toggle-label">Dark Mode</label>
-          <div class="toggle-switch">
-              <input type="checkbox" id="dark-mode-toggle">
-              <label for="dark-mode-toggle"></label>
-          </div>
-      </div>
-    </header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <nav>
-        <ul>
-            <li><a href="#bio">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="/khalfe_azaan_resume_24.pdf" target="_blank">Resume</a></li>
-        </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bio">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/khalfe_azaan_resume_24.pdf" target="_blank">Resume</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center ms-auto">
+                    <span class="me-2">Theme</span>
+                    <label class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
     </nav>
 
-    <section id="bio" class="section">
-        <h2 class="section-title">About Me</h2>
-        <p>Hello! I'm a recent Computer Science graduate from the University of Washington, eager to make my mark in the tech world. During my studies, I honed my skills in systems, and gained practical experience through the various projects.</p>
-    
-    <p>I'm passionate about distributed systems and systems in general, and I'm always excited to tackle new challenges that push the boundaries of what's possible with code. When I'm not coding, you can find me playing games as I am currently enjoying elden ring.</p>
-    
-    <p>I'm looking forward to contributing my fresh perspective and enthusiasm to innovative projects in the tech industry. Let's connect and explore how we can create something amazing together!</p>    
+    <section class="header-section text-center">
+        <div class="container">
+            <h1 class="display-4 mb-4" id="azaan-khalfe">Azaan Khalfe</h1>
+            <p>Computer Science Graduate | Systems Engineer</p>
+            <div class="social-links mt-4">
+                <a href="https://github.com/AzaanKH" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/azaan-khalfe-43b90b221/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:azaankhalfe@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </section>
 
-    <section id="projects" class="section projects">
-        <h2 class="section-title">Projects</h2>
-        <ul>
-            <li><strong>Paxos</strong> 
-                <br> 
-                Designed and implemented a fault-tolerant distributed system using the Paxos consensus algorithm, ensuring consistency and replication across multiple nodes
-Developed code in Java to handle each phase of the algorithm and implemented communication protocols for nodes to reach a consensus
-Authored a comprehensive design document detailing the Paxos consensus algorithm, encompassing all associated states and high-level information to guide system-wide integration and optimization
-</li>
-            <li><strong>NFL Fantasy Picker</strong> 
-                <br>
-                Developed a real-time Full Stack application using React and Node.js, dynamically predicting the top ten starting players and updating scores based on real-time data.
-Constructed and maintained an SQL database housing comprehensive data on 50 NFL players, ensuring timely score updates and data integrity.
-</li>
-            <li><strong>Comparing Paxos to Raft </strong> <br> 
-                Explaining how to implement Paxos and Raft and the trade offs between the two of them and simulating using them for a sample workload to see how they operate</li>
-        </ul>
+    <section id="bio" class="section py-5">
+        <div class="container">
+            <h2 class="section-title text-center">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p>Hello! I'm a recent Computer Science graduate from the University of Washington, eager to make my mark in the tech world. During my studies, I honed my skills in systems, and gained practical experience through various projects.</p>
+                    <p>I'm passionate about distributed systems and systems in general, and I'm always excited to tackle new challenges that push the boundaries of what's possible with code. When I'm not coding, you can find me playing games as I am currently enjoying Elden Ring.</p>
+                    <p>I'm looking forward to contributing my fresh perspective and enthusiasm to innovative projects in the tech industry. Let's connect and explore how we can create something amazing together!</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="resume" class="section">
-      <h2 class="section-title">Resume</h2>
-      <p>To view my full resume, please click the link below:</p>
-      <a href="/khalfe_azaan_resume_24.pdf" class="resume-link" target="_blank">View Resume (PDF)</a>
-  </section>
+    <section id="projects" class="section py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Paxos</h5>
+                            <p>Designed and implemented a fault-tolerant distributed system using the Paxos consensus algorithm, ensuring consistency and replication across multiple nodes. Developed code in Java to handle each phase of the algorithm and implemented communication protocols for nodes to reach a consensus.</p>
+                        </div>
+                    </div>
+                </div>
 
-    <footer>
-        <p>Contact: azaankhalfe@gmail.com | <a href="https://www.linkedin.com/in/azaan-khalfe-43b90b221/">LinkedIn</a> | <a href="https://github.com/AzaanKH">GitHub</a></p>
-    </footer>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">NFL Fantasy Picker</h5>
+                            <p>Developed a real-time Full Stack application using React and Node.js, dynamically predicting the top ten starting players and updating scores based on real-time data. Constructed and maintained an SQL database housing comprehensive data on 50 NFL players.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Comparing Paxos to Raft</h5>
+                            <p>Explained how to implement Paxos and Raft and the trade-offs between the two, simulating them for a sample workload to compare their operation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="section py-5">
+        <div class="container text-center">
+            <h2 class="section-title">Resume</h2>
+            <a href="/khalfe_azaan_resume_24.pdf" class="btn resume-btn" target="_blank">View Resume</a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
